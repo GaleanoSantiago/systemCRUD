@@ -119,51 +119,64 @@ if($acceso==1){                     //Determina si el usuario es admin. Solo si 
 
 <div class="container" style="">
     <div class="row">
-        <div class="col-lg-12">  
-  <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseForm">
-    Agregar Nuevo Proveedor
-  </a>
-  
-</p>
-<div class="collapse" id="collapseForm">
-  <div class="card card-body">
-	<form action="lista_prov.php" method="POST">
-    <div class="container">
-	<div class="row">
-  	<div class="col-6" >
-	<div class="mb-3">
-		<input type="hidden" name="accion" value="confirmacion">
-	<label for="nombre" class="form-label" >Nombre</label>
-	<input type="text" name="nombre" id="nombre" class="form-control" required >
-	</div>
-	<div class="mb-3">
-	<label for="direccion" class="form-label" >Direccion</label>
-	<input type="text" name="direccion" id="direccion"  class="form-control" required>
-	</div>
+        <div class="col-lg-12"> 
+
+    			<!-- Boton para la ventana modal -->
+	<button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+	Agregar Nuevo Proveedor
+	</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Nuevo Proveedor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+    <form action="lista_prov.php" method="POST" id="formularioProv">
+        
+        <div class="mb-3">
+            <input type="hidden" name="accion" value="confirmacion">
+            <label for="nombre" class="form-label" >Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" required >
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label" >Direccion</label>
+            <input type="text" name="direccion" id="direccion"  class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="tel" class="form-label">Numero de Celular</label> 
+            <input type="tel" name="phone" id="phone" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>	
+            <input type="email" name="correo" id="correo" class="form-control" required >
+        </div>
+            
+	</form>
+
+      </div>
+      <div class="modal-footer">
+        <div class="pe-2 border-end">
+        <button type="submit" class="btn btn-primary" form="formularioProv">Almacenar</button>
+        <button type="reset" class="btn btn-danger" form="formularioProv">Cancelar</button>
+        </div>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        
+      </div>
     </div>
-    <div class="col-6">
-	<div class="mb-3">
-	<label for="tel" class="form-label">Numero de Celular</label> 
-	<input type="tel" name="phone" id="phone" class="form-control" required>
-	</div>
-	<div class="mb-3">
-	<label for="correo" class="form-label">Correo</label>	
-	<input type="email" name="correo" id="correo" class="form-control" required >
-	</div>
-		<br>
-  		<button type="submit" class="btn btn-primary">Almacenar</button>
-		<button type="reset" class="btn btn-danger">Cancelar</button>
-	</form></div>
-			
-	</div>
   </div>
-</div>
+</div>    
+
 <br><!--Para dejar un espacio entre el formulario y la tabla-->
  
 </div>
 </div>    
-        </div>    
-    </div>   
+</div>    
+</div>   
 <?php
 }
 	?>

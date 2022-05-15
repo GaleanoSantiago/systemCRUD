@@ -121,17 +121,22 @@ if($acceso==1){									//Determina si el usuario es admin. Solo si es admin apa
 <div class="container" style="">
     <div class="row">
         <div class="col-lg-12">  
-  <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseForm">
-    Agregar Nuevo Producto
-  </a>
-  
-</p>
-<div class="collapse" id="collapseForm">
-  <div class="card card-body">
-	<form action="lista_productos.php" method="POST">										<!-- Formulario que envia al mismo archivo -->
-    <div class="container">
-	<div class="row">
-  	<div class="col-lg-6 col-md-6 col-sm-12" >
+				<!-- Boton para la ventana modal -->
+	<button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+	Agregar Nuevo Producto
+	</button>
+
+	<!-- Ventana Modal Estatica -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Nuevo Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <form action="lista_productos.php" method="POST" id="formularioProducto">										<!-- Formulario que envia al mismo archivo -->
+    
 	<div class="mb-3">
 		<input type="hidden" name="accion" value="confirmacion">							<!-- Input oculto para confirmar que el formulario se envio -->
 	<label for="codigo_barra" class="form-label" >Codigo de Barra</label>
@@ -164,8 +169,7 @@ if($acceso==1){									//Determina si el usuario es admin. Solo si es admin apa
 		<label for="stock_act" class="form-label">Stock Actual</label>	
 		<input type="number" class="form-control" name="stock_act" id="stock_act" min="1" required >
 		</div>
-		</div> <!--Cierre de la primera columna-->
-		<div class="col-lg-6 col-md-6 col-sm-12">
+		
 		<div class="mb-3">
 		<label for="stock_act" class="form-label">Stock Minimo</label>	
 		<input type="number" class="form-control" name="stock_min" id="stock_min" min="1" required>
@@ -194,14 +198,21 @@ if($acceso==1){									//Determina si el usuario es admin. Solo si es admin apa
 				
 			</select>
 		</div>
-		<br>
-  		<button type="submit" class="btn btn-primary">Almacenar</button>					<!-- Boton para almacenar productos -->
-		<button type="reset" class="btn btn-danger">Cancelar</button>						<!-- Boton para resetear los campos -->
-	</form></div>
-			
+		
+  		</form>
+      </div>
+      <div class="modal-footer">
+		<div class="border-end pe-2">
+		<button type="submit" class="btn btn-primary" form="formularioProducto">Almacenar</button>					<!-- Boton para almacenar productos -->
+		<button type="reset" class="btn btn-danger" form="formularioProducto">Cancelar</button>						<!-- Boton para resetear los campos -->
+		</div>
+		<button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
 	</div>
+    </div>
   </div>
 </div>
+
 <br><!--Para dejar un espacio entre el formulario y la tabla-->
  
 </div>
@@ -257,14 +268,7 @@ if($acceso==1){									//Determina si el usuario es admin. Solo si es admin apa
 
     ?>		
 <div>
-<!--<script>
-var resultado = window.confirm('Estas seguro?');
-if (resultado === true) {
-    window.alert('Okay, si estas seguro.');
-} else { 
-    window.alert('Pareces indeciso');
-}
-</script>-->
+
 </div>	
 <form action='../checked.php' method='POST'>
 	<div class="container">							<!-- Tabla de Productos -->
@@ -363,7 +367,7 @@ if (resultado === true) {
             <input type="checkbox" id="selectall"> Seleccionar todo
 			</div>
             <div class="p-2 bd-highlight">
-            <span class="text-secondary">Opcion para los elementos seleccionados   </span>
+            <span class="text-secondary">Opcion para los elementos seleccionados</span>
             <input type="submit" class="btn btn-dark" name="eliminar" id="eliminar" value="Eliminar" Onclick="return ConfirmDelete();">
             </div>
             <div class="p-2 bd-highlight"></div> <!-- Para otro boton al lado del de eliminar -->
