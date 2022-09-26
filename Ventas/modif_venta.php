@@ -8,6 +8,8 @@ include("../Includes/header.php");
 <head>
 <meta charset="utf-8">
 <title>Modificar Producto Elegido</title>
+<link rel="icon" href="../imagenes/iconos/vender.png">
+
 <!-- Bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css">
 

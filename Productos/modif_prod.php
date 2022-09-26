@@ -8,6 +8,8 @@ include("../Includes/header.php");		//No permite ver los errores
 <head>
 <meta charset="utf-8">
 <title>Editar Producto</title>
+    <link rel="icon" href="../imagenes/iconos/caja.png">
+
 <link rel="stylesheet" href="../estilo.css">
 <!-- Bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css">

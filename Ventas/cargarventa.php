@@ -7,6 +7,7 @@ include("../Includes/header.php");		//Con este codigo tampoco muestra errores la
 <head>
 <meta charset="utf-8">
 <title>Venta Realizada</title>
+<link rel="icon" href="../imagenes/iconos/vender.png">
 <!-- Bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css">
 

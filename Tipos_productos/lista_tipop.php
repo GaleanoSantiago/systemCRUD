@@ -9,6 +9,7 @@ include("../Includes/header.php");
 <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lista de Rubros</title>
+<link rel="icon" href="../imagenes/iconos/rubros.png">
 <!-- Bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css">
 
@@ -148,12 +149,43 @@ include("../Includes/header.php");
         <button type="submit" class="btn btn-primary" form="formularioRubro">Almacenar</button>
         <button type="reset" class="btn btn-danger" form="formularioRubro">Cancelar</button>
       </div>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
 
+ <!-- Modal para editar-->
+ <div class="modal fade" id="staticBackdropEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Nuevo Rubro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      <form action="lista_tipop.php" method="POST" id="formularioRubro">
+  
+      <div class="mb-3">
+        <input type="hidden" name="accion" value="confirmacion">
+        <label for="nombre" class="form-label" >Nombre del Nuevo Rubro</label>
+        <input type="text" name="nombre" id="nombre" class="form-control" ucwords required >
+      </div>
+    
+      </form>
+
+      </div>
+      <div class="modal-footer">
+      <div class="pe-2 border-end">
+        <button type="submit" class="btn btn-primary" form="formularioRubro">Almacenar</button>
+        <button type="reset" class="btn btn-danger" form="formularioRubro">Cancelar</button>
+      </div>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
      
     <br><!--Para dejar un espacio entre el formulario y la tabla-->
      

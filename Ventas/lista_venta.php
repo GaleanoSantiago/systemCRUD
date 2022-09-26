@@ -8,6 +8,8 @@ include("../Includes/header.php");
 <head>
 <meta charset="utf-8">
 <title>Lista de Ventas</title>
+<link rel="icon" href="../imagenes/iconos/bienes.png">
+
 <!-- Bootstrap -->
 <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" type="text/css">
 
